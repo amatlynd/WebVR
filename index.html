@@ -11,8 +11,7 @@
       
       init: function(){
         var sceneEl = document.querySelector('a-scene');
-        setTimeout(function(){
-            console.log("hello");
+
             sceneEl.emit('animate', true);
         }, 5000);
         console.log("world");
