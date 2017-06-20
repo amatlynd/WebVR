@@ -6,10 +6,25 @@
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+    <script>
+    AFRAME.registerComponent('main', {
+      
+      init: function(){
+        var sceneEl = document.querySelector('a-scene');
+        setTimeout(function(){
+            console.log("hello");
+            sceneEl.emit('animate', true);
+        }, 5000);
+        console.log("world");
+        
+      }
+    });
+    </script>
   </head>
   
   <body>
-    <a-scene>
+    <!-- create component for scene -->
+    <a-scene main>
       <a-assets>
         <img id="groundTexture" src="https://cdn.glitch.com/f24b6582-2aac-4c7c-b0d8-1f2888740a4a%2Ffloor.jpg?1497980730633">
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
