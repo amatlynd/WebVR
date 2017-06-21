@@ -16,19 +16,22 @@
           var sceneEl = document.querySelector('a-scene'); 
           var sphere = sceneEl.querySelector('#fall');
           var hit = sceneEl.querySelector('#plane');
-          var el = document.createElement('a-entity');
-              el.setAttribute('particle-system', {'preset': 'default',  'color': '#515', 'particleCount': 1000});
-              el.setAttribute('position', '0 0 -5');
+          
   
           sphere.addEventListener('collide', function(event){
             if(event.detail.body.el == hit){
-             
+              console.log("hello");
+             var el = document.createElement('a-entity');
+            el.setAttribute('particle-system', {'preset': 'default',  'color': 'pink', 'particleCount': 1000});
+              el.setAttribute('position', '0 0 -5');
               sceneEl.appendChild(el);
             }
           });
 
         }
       });
+      
+      
     </script>
   </head>
   
@@ -47,8 +50,8 @@
                 animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-sphere>
       
       
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-box position="-2.5 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-cylinder position="2.5 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-entity id="plane" geometry="primitive: plane; width: 1000; height: 1000" material="src: #groundTexture; repeat: 100 100;" rotation="-90 0 0" static-body="sphereRadius:NaN"></a-entity>
       <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>    
     </a-scene>
