@@ -20,9 +20,8 @@
   
           sphere.addEventListener('collide', function(event){
             if(event.detail.body.el == hit){
-              console.log("hello");
-             var el = document.createElement('a-entity');
-            el.setAttribute('particle-system', {'preset': 'default',  'color': 'pink', 'particleCount': 1000});
+              var el = document.createElement('a-entity');
+              el.setAttribute('particle-system', {'preset': 'default',  'color': '#515', particleCount': 1000});
               el.setAttribute('position', '0 0 -5');
               sceneEl.appendChild(el);
             }
@@ -30,6 +29,7 @@
 
         }
       });
+    
       
       
     </script>
@@ -47,7 +47,7 @@
       <a-entity particle-system="preset: snow; particleCount: 10000"></a-entity>
       <!--<a-entity particle-system="preset: default; color: #515; particleCount: 1000" position="0 0 -5"></a-entity>-->
       <a-sphere id = "fall" position= "0 5 -5" radius="1.25" color="#EF2D5E" dynamic-body="sphereRadius:NaN"
-                animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-sphere>
+                animation="startEvents: collide; property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-sphere>
       
       
       <a-box position="-2.5 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
