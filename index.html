@@ -21,7 +21,7 @@
           sphere.addEventListener('collide', function(event){
             if(event.detail.body.el == hit){
               var el = document.createElement('a-entity');
-              el.setAttribute('particle-system', {'preset': 'default',  'color': '#515', particleCount': 1000});
+              el.setAttribute('particle-system', {'preset': 'default',  'color': '#515', 'particleCount': 1000});
               el.setAttribute('position', '0 0 -5');
               sceneEl.appendChild(el);
             }
