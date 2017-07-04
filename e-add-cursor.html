@@ -30,8 +30,11 @@
         <a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation>
       </a-box>
 
+      
       <a-cylinder position="2.5 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-entity id="plane" geometry="primitive: plane; width: 1000; height: 1000" material="src: #groundTexture; repeat: 100 100;" rotation="-90 0 0" static-body="sphereRadius:NaN"></a-entity>
+      <a-entity id="plane" geometry="primitive: plane; width: 1000; height: 1000" 
+                material="src: #groundTexture; repeat: 100 100;" 
+                rotation="-90 0 0" static-body="sphereRadius:NaN"></a-entity>
       <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky> 
       
       
