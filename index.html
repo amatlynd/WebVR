@@ -14,17 +14,35 @@
     
     <script>
       
+      AFRAME.registerComponet('main', {
+        
+          init:function(){
+              var sceneEl = querySelector('a-scene');
+              var sphere = querySelector('#fall');
+              var hit = querySelector('#plane');
+            
+            sphere.addEventListener('collide', function(event){
+                if(event.detail.body.el == hit){
+                  var el = document.createElement('a-entity');
+                  el.setAttribute('particle-system',{'preset':'default';'color':'#515'; 'particleCount':1000});
+                  el.setAttribute('postion':'0 0.2 -2.5');
+                  sceneEl.appendChild(el);
+                }
+            })
+          }        
+      })
+      
     </script>
   
   </head>
   <body>
-    <a-scene>
+    <a-scene main>
       <a-assets>
           <img id="groundTexture" src="https://cdn.glitch.com/f24b6582-2aac-4c7c-b0d8-1f2888740a4a%2Ffloor.jpg?1497980730633">
           <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
       </a-assets>
       <a-entity particle-system="preset:snow; particleCount:1000"></a-entity>
-      <a-entity particle-system="preset:default; color: #515; particleCount: 1000" position="0 0.2 -2.5"></a-entity>
+      <!--<a-entity particle-system="preset:default; color: #515; particleCount: 1000" position="0 0.2 -2.5"></a-entity>-->
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-sphere id="fall" position="0 5 -5" radius="1.25" color="#EF2D5E" 
                 animation="property:scale; dir:alternate; dur:100; to:1.1 1.1 1.1; loop: true " dynamic-body></a-sphere>
