@@ -13,6 +13,7 @@
          * Code within this function will be called when everything in <a-scene> is ready and loaded.
          */
         init: function () {
+          /*  query for all the important entities */
           var sceneEl = document.querySelector('a-scene'); 
           var sphere = sceneEl.querySelector('#fall');
           var hit = sceneEl.querySelector('#plane');
@@ -20,6 +21,7 @@
   
           sphere.addEventListener('collide', function(event){
             if(event.detail.body.el == hit){
+              /*  create an enitity and add the particle system to it */
               var el = document.createElement('a-entity');
               el.setAttribute('particle-system', {'preset': 'default',  'color': '#515', 'particleCount': 1000});
               el.setAttribute('position', '0 0.2 -2.5');

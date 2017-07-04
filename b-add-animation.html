@@ -4,10 +4,10 @@
     <title>Hello, WebVR! - A-Frame</title>
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <!-- add link to animation component -->
+    <!-- ***add link to animation component -->
     <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
     
-    <!-- add link to particle system component -->
+    <!-- ***add link to particle system component -->
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
   </head>
   <body>
@@ -17,13 +17,13 @@
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
       </a-assets>
       
-      <!-- add snow and star particles -->
-      <!-- doumentation at : https://github.com/IdeaSpaceVR/aframe-particle-system-component -->
+      <!-- *** add snow and star particles -->
+      <!-- *** doumentation at : https://github.com/IdeaSpaceVR/aframe-particle-system-component -->
       <a-entity particle-system="preset: snow; particleCount: 10000"></a-entity>
       <a-entity particle-system="preset: default; color: #515; particleCount: 1000" position="0 0.2 -2.5"></a-entity>
-      <!-- talk about position change of particle entity -->
-      <!-- add animations to sphere with animation component by making it change its scale-->
-      <!-- documentation at https://github.com/IdeaSpaceVR/aframe-particle-system-component -->
+      <!-- *** talk about position change of particle entity -->
+      <!-- *** add animations to sphere with animation component by making it change its scale-->
+      <!-- *** documentation at https://github.com/IdeaSpaceVR/aframe-particle-system-component -->
       <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"
                 animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true"></a-sphere>
       
