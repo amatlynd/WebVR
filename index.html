@@ -14,23 +14,23 @@
     
     <script>
       
-      AFRAME.registerComponet('main', {
+      AFRAME.registerComponent('main', {
         
           init:function(){
-              var sceneEl = querySelector('a-scene');
-              var sphere = querySelector('#fall');
-              var hit = querySelector('#plane');
+              var sceneEl = document.querySelector('a-scene');
+              var sphere = sceneEl.querySelector('#fall');
+              var hit = sceneEl.querySelector('#plane');
             
             sphere.addEventListener('collide', function(event){
                 if(event.detail.body.el == hit){
                   var el = document.createElement('a-entity');
-                  el.setAttribute('particle-system',{'preset':'default';'color':'#515'; 'particleCount':1000});
-                  el.setAttribute('postion':'0 0.2 -2.5');
+                  el.setAttribute('particle-system', {'preset': 'default',  'color': '#515', 'particleCount': 1000});
+              el.setAttribute('position', '0 0.2 -2.5');
                   sceneEl.appendChild(el);
                 }
-            })
+            });
           }        
-      })
+      });
       
     </script>
   
