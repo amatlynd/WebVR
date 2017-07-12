@@ -16,9 +16,8 @@
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
       </a-asset>
       
-      <a-entity></a-entity>
-      
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="1000" height="10" color="#7BC8A4"></a-plane>
+      <a-entity geometry="primitive:plane;width:1000;height:1000" material="src:#groundTexture; repeat: 100 100" rotation="-90 0 0"></a-entity>
+      <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky> 
       
       
     
@@ -31,7 +30,7 @@
       <a-entity id="plane" geometry="primitive: plane; width: 1000; height: 1000" material="src: #groundTexture; repeat: 100 100;" rotation="-90 0 0"></a-entity>
       
       <!-- change sky primative -->
-      <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky> 
+     
     </a-scene>
   </body>
 </html>
