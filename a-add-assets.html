@@ -11,11 +11,17 @@
   </head>
   <body>
     <a-scene>
-      <a-assets>
-        <!-- use glitch asset url -->
+      <a-asset>
         <img id="groundTexture" src="https://cdn.glitch.com/f24b6582-2aac-4c7c-b0d8-1f2888740a4a%2Ffloor.jpg?1497980730633">
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
-      </a-assets>
+      </a-asset>
+      
+      <a-entity></a-entity>
+      
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="1000" height="10" color="#7BC8A4"></a-plane>
+      
+      
+    
     
       <a-box position="-4 0.5 -3" rotation="0 45 0" color="skyblue" scale="2 2 2"></a-box>
       <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
