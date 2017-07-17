@@ -53,7 +53,10 @@
       <a-sphere id="fall" position="0 5 -5" radius="1.25" color="#EF2D5E"
                 animation="startEvents:collide; property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true" dynamic-body></a-sphere>
       
-      <a-box position="-4 0.5 -3" rotation="0 45 0" color="skyblue" scale="2 2 2"></a-box>
+      <a-box position="-4 0.5 -3" rotation="0 45 0" color="skyblue" scale="2 2 2"
+             event-set__enter="_event:mouseenter;material.color:yellowgreen;scale:6 2 2"
+             event-set__leave="_event:mouseleave;material.color:skyblue;scale:2 2 2"
+             animation="startEvents:click;property:rotation; dir:alternate; dur:500; to:30 30 360;"></a-box>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-entity id="plane" geometry="primitive: plane; width: 1000; height: 1000" material="src: #groundTexture; repeat: 100 100;" rotation="-90 0 0" static-body ></a-entity>
       <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>  
