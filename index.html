@@ -17,7 +17,18 @@
       AFRAME.registerComponent('main', {
         init:function(){
           var sceneEl = document.querySelector('a-scene');
-          var sphere = sceneEl.querySelector('#fall')
+          var sphere = sceneEl.querySelector('#fall');
+          var hit = sceneEl.querySelector('#plane');
+          
+          sphere.addEventListener('collide', function(event){
+            if(event.detail.body.el == hit){
+              var el = document.createElement('a-entity');
+              el.setAttribute('particle-system',{'preset':'default', 'color':'#515','particleCount':1000});
+              el.setAttribute('position', '0 0.2 -2.5');
+              sceneEl.appendChild(el);
+            }
+            
+          });
           
         }
                                 
@@ -39,7 +50,7 @@
       <!--<a-entity particle-system="preset: snow; particleCount: 10000"></a-entity>
       <a-entity particle-system="preset: default; color: #515; particleCount: 1000" position="0 0.2 -2.5"></a-entity>-->
     
-      <a-sphere position="0 5 -5" radius="1.25" color="#EF2D5E"
+      <a-sphere id="fall" position="0 5 -5" radius="1.25" color="#EF2D5E"
                 animation="property: scale; dir: alternate; dur: 100; to: 1.1 1.1 1.1; loop: true" dynamic-body></a-sphere>
       
       <a-box position="-4 0.5 -3" rotation="0 45 0" color="skyblue" scale="2 2 2"></a-box>
